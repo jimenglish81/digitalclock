@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">	
+<meta charset="utf-8">
+<title>Digital Clock</title>
+<style type="text/css">
+body {
+	background-color: rgba(5,5,5,1);
+	margin: 20px 0 0;
+}
+#container {
+	margin: auto;
+}
+</style>
+</head>
+<body>
+<div id="container"></div>
+<script src="digitalclock.js"></script>
+<script>
+	var uA = navigator.userAgent;
+	if((uA.match(/iPhone/i)) ||  (uA.match(/iPod/i))) {
+		setTimeout(function () {
+			window.scrollTo(0, 1);
+		}, 100);
+	}
+
+	(new DigitalClock(document.getElementById('container'), 500)
+			.with24Hour()
+			.withNumberShadows()
+	       	//.withColors(null, 'rgb(252,21,1)') // red
+           //.withColors('rgb(183,200,182)', 'rgb(72,77,70)','rgb(107,107,107)','rgba(72,77,70,0.1)') // greyish casio
+           //.withColors('rgb(139,58,58)', 'rgb(252,21,1)') // very red
+           //.withColors(null, 'rgb(102,205,0)', 'rgb(127,255,0)', 'rgba(116,130,105,0.1)') // green
+           //.withColors('rgb(96,131,65)', 'rgb(58,102,41)','rgb(59,94,43)', 'rgba(116,130,105,0.1)') // very green
+         //.withColors('rgb(178,223,238)', 'rgb(112,128,144)', 'rgb(183,195,208)', 'rgba(122,139,139,0.1)') // very blue
+         //.withColors(null, 'rgb(173,216,230)', 'rgb(0,191,255)', 'rgba(122,139,139,0.1)') // neon blue
+         //.withColors(null, 'rgb(1,71,250)', 'rgb(89,113,173)', 'rgba(122,139,139,0.1)') // blue
+         //.withColors(null, 'rgb(255,119,34)', 'rgb(224,64,6)', 'rgba(167,141,132,0.1)') // orange
+         //.withColors(null, 'rgb(255,230,0)', 'rgb(255,227,3)', 'rgba(205,201,165,0.1)') // yellow
+         	.withColors('rgb(50,153,204)', 'rgb(237,237,237)', 'rgb(250,250,250)', 'rgba(199,199,199,0.1)') // inverse blue
+			.withFrame()
+			.initialise());
+</script>
+</body>
+</html>
